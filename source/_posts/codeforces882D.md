@@ -4,7 +4,7 @@ date: 2023-09-07 21:21:59
 tags: codeforces
 categories: codeforces
 ---
-> 连续 **n** 个数字里边必有能整除 **n** 的数字 , 所以只需从 1 开始枚举 .
+> 连续 $n$ 个数字里边必有能整除 $n$ 的数字 , 所以只需从 $1$ 开始枚举 .
 ```C++
 #include<iostream>
 using namespace std;
