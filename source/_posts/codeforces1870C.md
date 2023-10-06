@@ -1,5 +1,5 @@
 ---
-title: codeforces882D
+title: [codeforces1870C](https://codeforces.com/problemset/problem/1870/C)
 date: 2023-09-07 21:21:59
 tags: codeforces
 categories: codeforces
@@ -11,7 +11,7 @@ categories: codeforces
 
 对于从 $1$ 到 $k$ 的每种颜色，找出数组 $b$ 中包含该颜色所有单元格的最小矩形。输出该矩形的宽和高之和。
 
-## 方法 一：
+## 方法 一
 $b_{i,j} =\min(a_i, a_j)$ $->$求$a[i]$最左边和最右边大于等于$a[i]$的数的下标, 即$ans[i]=(ri[i]-li[i]+1)*2$ 。
 >代码
 ```c++
