@@ -9,7 +9,7 @@
     
     <title>
         
-            归档: 2024 |
+            Linux-windows双系统时间不一致 |
         
         LXP&#39;s Blog
     </title>
@@ -89,7 +89,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/archives"
                             >
                                 归档
@@ -147,7 +147,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/archives">归档</a>
                 </li>
             
@@ -183,63 +183,218 @@
                 
 
                     <div class="fade-in-down-animation">
-    <div class="archives-container">
-        <div class="archives-timeline border-box">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
             
-<div class="archive-list-container border-box">
-    
-        <section class="archive-item border-box">
-            <div class="archive-item-header border-box">
-                <span class="archive-year">2024</span>
-            </div>
-            <ul class="article-list border-box">
+
+            <div class="article-content-bottom border-box">
                 
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">04-15</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2024/04/15/Linux-windows%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E4%B8%8D%E4%B8%80%E8%87%B4/"
-                        >Linux-windows双系统时间不一致</a>
-                    </li>
+                    <div class="article-title">
+                        Linux-windows双系统时间不一致
+                    </div>
                 
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">04-15</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2024/04/15/Windows%E4%B8%8EUbuntu22-04-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"
-                        >Windows与Ubuntu22.04 双系统安装</a>
-                    </li>
+
                 
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">02-16</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2024/02/16/Proxifier-2023%E5%B9%B411%E6%9C%88%E6%97%B6%E6%9C%80%E6%96%B0%E7%89%88-%E6%BF%80%E6%B4%BB%E6%95%99%E7%A8%8B/"
-                        >Proxifier 2023年11月时最新版 激活教程</a>
-                    </li>
-                
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">02-03</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2024/02/03/codeforces1920D/"
-                        >codeforces1920D.md</a>
-                    </li>
-                
-                    <li class="article-item border-box">
-                        <span class="article-date border-box">02-02</span>
-                        <a class="article-title border-box text-ellipsis"
-                           href="/2024/02/02/redis/"
-                        >redis</a>
-                    </li>
-                
-            </ul>
-        </section>
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/lxp.png">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">JACL</span>
+                                
+                                    <span class="author-label">C++菜鸟</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2024-04-15 19:35:40</span>
+                <span class="mobile">2024-04-15 19:35</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Mon Apr 15 2024 19:57:13 GMT+0800">2024-04-15 19:57:13</span>
+            </span>
+        
+
+        
+
+        
+
+        
+        
+            <span class="meta-info-item article-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>335 字</span>
+            </span>
+        
+        
+            <span class="meta-info-item article-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+            </span>
+        
+        
+    </div>
+
     
 </div>
 
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <ul>
+<li>问题：</li>
+</ul>
+<p>Linux和windows双系统安装完成后，两个系统显示时间相差八个小时。</p>
+<ul>
+<li>基础知识：</li>
+</ul>
+<p>UTC（Universal Time Coordinated）即协调世界时，以原子时长为基础，精度好。</p>
+<p>RTC（Real-Time Clock）实时时钟，在计算机领域称为硬件时钟，顾名思义电脑上有个硬件保存了时间信息。让我们下次启动之后，时间还可以正常显示。</p>
+<ul>
+<li>原因：</li>
+</ul>
+<p>windows把RTC时间当作本地时间——在中国，就是东八区时间。而Linux会将RTC时间当作UTC时间。</p>
+<p>所以：Linux会将RTC设置成UTC时间。显示时间会根据时区显示，例如在中国，显示时间时会自动+8小时。</p>
+<p>Linux关机，启动windows后。Window把RTC当成了本时区的时间，直接显示。但是RTC已经被Linux设置成了UTC时间，所以显示时间会晚8个小时。</p>
+<ul>
+<li>解决办法：</li>
+</ul>
+<p>修改windows，让其将RTC硬件时间当作UTC时间。因为Linux使用RTC时间可能会导致一些程序发生错误。</p>
+<p>以管理员身份打开 「PowerShell」，输入以下命令：<br><code>Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /tREG_DWORD /d 1</code></p>
+<p>或者打开<code>注册表编辑器</code>，定位到计算机<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInfor
+mation</code> 目录下，新建一个 <code>DWORD</code> 类型，名称为 <code>RealTimeIsUniversal</code> 的键，并修改键值为 <code>1</code> 即可。</p>
+
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/04/15/Windows%E4%B8%8EUbuntu22-04-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"
+                                   title="Windows与Ubuntu22.04 双系统安装"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Windows与Ubuntu22.04 双系统安装</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+    <div class="comments-container border-box">
+        <div id="comments-anchor" class="comment-area-title border-box">
+            <i class="fas fa-comments"></i>&nbsp;评论
         </div>
+        
+            
+
+    <div class="gitalk-comment-container">
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+        <script  src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+        <script >
+          function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+              __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+              Gitalk && new Gitalk({
+                clientID: '73ccb16b78669d8725ff',
+                clientSecret: 'bd1d205474a55aa5515257879f18931dde6f6abc',
+                repo: 'Comment',
+                owner: 'LaiXinpeng',
+                admin: 'LaiXinpeng',
+                id: __gitalk__pathname,
+                proxy: '',
+                language: 'zh-CN'
+              }).render('gitalk-container');
+            } catch (e) {
+              window.Gitalk = null;
+            }
+          }
+
+          if ('false' === 'true') {
+            const loadGitalkTimeout = setTimeout(() => {
+              loadGitalk();
+              clearTimeout(loadGitalkTimeout);
+            }, 1000);
+          } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+          }
+        </script>
     </div>
-    
+
+
+        
+    </div>
 
 
 
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        
+    </div>
 </div>
 
 
@@ -284,6 +439,28 @@
 
     <!-- post tools -->
     
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+            <li class="tools-item flex-center go-to-comments">
+                <i class="fas fa-comment"></i>
+                <span class="post-comments-count"></span>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
 
     <!-- side tools -->
     <div class="side-tools">
@@ -311,7 +488,15 @@
 
     <ul class="exposed-tools-list border-box">
         
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
 
+        
+            <li class="tools-item go-to-comments-tablet flex-center">
+                <i class="fas fa-comment"></i>
+            </li>
         
 
         <li class="tools-item tool-toggle-show flex-center">
@@ -367,6 +552,17 @@
 
     <!-- tablet toc -->
     
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        
+    </div>
+</div>
+
+            </div>
+        </div>
+    
 </main>
 
 
@@ -404,6 +600,24 @@
 
 
 <div class="">
+    
+        <!-- post-helper -->
+        
+<script src="/js/post/post-helper.js"></script>
+
+
+        <!-- toc -->
+        
+            
+<script src="/js/post/toc.js"></script>
+
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
     
 
     <!-- category-page -->
