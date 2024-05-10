@@ -5,7 +5,8 @@ tags: codeforces
 mathjax: true
 categories: codeforces
 ---
-[codeforces1870C](https://codeforces.com/problemset/problem/1870/C)
+[codeforces1870C][def]
+
 ## 题意
 给你两个整数 $n$ 和 $k$。同时给你一个大小为 $n$的整数数组 $a_1, a_2, \ldots, a_n$。已知对于所有 $1 \leq i \leq n$， $1 \leq a_i \leq k$.
 
@@ -15,7 +16,7 @@ categories: codeforces
 
 ## 方法 一
 $b_{i,j} =\min(a_i, a_j)$ $->$求$a[i]$最左边和最右边大于等于$a[i]$的数的下标, 即$ans[i]=(ri[i]-li[i]+1)*2$ 。
->代码
+
 ```c++
 #include<iostream>
 #include<vector>
@@ -50,3 +51,4 @@ int main()
 
 ```
 
+[def]: https://codeforces.com/problemset/problem/1870/C
