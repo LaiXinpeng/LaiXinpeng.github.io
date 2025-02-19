@@ -1,1 +1,4 @@
+.deploy_git
+.vscode
+.idea
 node_modules
