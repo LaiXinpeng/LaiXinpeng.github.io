@@ -227,7 +227,7 @@
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Mon Apr 15 2024 19:57:13 GMT+0800">2024-04-15 19:57:13</span>
+                <span class="pc" data-updated="Wed Feb 19 2025 19:56:00 GMT+0800">2025-02-19 19:56:00</span>
             </span>
         
 
@@ -267,8 +267,10 @@
 <ul>
 <li>基础知识：</li>
 </ul>
-<p>UTC（Universal Time Coordinated）即协调世界时，以原子时长为基础，精度好。</p>
-<p>RTC（Real-Time Clock）实时时钟，在计算机领域称为硬件时钟，顾名思义电脑上有个硬件保存了时间信息。让我们下次启动之后，时间还可以正常显示。</p>
+<p>UTC（Universal Time
+Coordinated）即协调世界时，以原子时长为基础，精度好。</p>
+<p>RTC（Real-Time
+Clock）实时时钟，在计算机领域称为硬件时钟，顾名思义电脑上有个硬件保存了时间信息。让我们下次启动之后，时间还可以正常显示。</p>
 <ul>
 <li>原因：</li>
 </ul>
@@ -279,9 +281,12 @@
 <li>解决办法：</li>
 </ul>
 <p>修改windows，让其将RTC硬件时间当作UTC时间。因为Linux使用RTC时间可能会导致一些程序发生错误。</p>
-<p>以管理员身份打开 「PowerShell」，输入以下命令：<br><code>Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /tREG_DWORD /d 1</code></p>
-<p>或者打开<code>注册表编辑器</code>，定位到计算机<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInfor
-mation</code> 目录下，新建一个 <code>DWORD</code> 类型，名称为 <code>RealTimeIsUniversal</code> 的键，并修改键值为 <code>1</code> 即可。</p>
+<p>以管理员身份打开 「PowerShell」，输入以下命令：
+<code>Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /tREG_DWORD /d 1</code></p>
+<p>或者打开<code>注册表编辑器</code>，定位到计算机<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInfor mation</code>
+目录下，新建一个 <code>DWORD</code> 类型，名称为
+<code>RealTimeIsUniversal</code> 的键，并修改键值为 <code>1</code>
+即可。</p>
 
                 </div>
 

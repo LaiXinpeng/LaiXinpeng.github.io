@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Git 操作
 git add .
 git commit -m "backup"
