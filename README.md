@@ -1,1 +1,1 @@
-# hexo
+# LXP'Blog
