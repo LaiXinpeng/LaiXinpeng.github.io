@@ -39,11 +39,11 @@ style:
     enable: true  # Option values: true | false
 
     # First screen background image (You can use local image or image external link)
-    background_img: /images/bg.svg
+    background_img: /images/preview.png
 
     # First screen description
     # You can use the "||" to begin a newline, maximum is two lines.
-    description: Keep writing and Keep loving.
+    description: You Can Make It.
 
     # If enable hitokoto, first screen description is different every time when you enter the site
     hitokoto: false      # Option values: true | false
@@ -83,7 +83,7 @@ social_contact:
     # If you want to click open the picture, you need to add a prefix "img |",
     # at the same time change your link to the image link.
     # e.g. [ weixin: img | https://x.com/images/wechat.png ] or [ weixin: img | ./images/wechat.png ]
-    github: https://github.com/jacl-del          # GitHub
+    github: https://github.com/LaiXinpeng          # GitHub
     weixin:          # WeChat
     qq: img | ./images/QQ.png             # QQ
     weibo:           # WeiBo
@@ -99,11 +99,11 @@ social_contact:
 home_article:
   # Show category in home page article block
   category:
-    enable: false  # Option values: true | false
+    enable: true  # Option values: true | false
     limit: 3       # Max number of categories shown in home page article block
   # Show tags in home page article block
   tag:
-    enable: false  # Option values: true | false
+    enable: true  # Option values: true | false
     limit: 5       # Max number of tags shown in home page article block
 
 # ---------------------------------------------------------------------------------------
@@ -117,17 +117,17 @@ post:
 
     # If true, show Lv1, Lv2, Lv3 ...
     # If false, show custom_label_list
-    auto: true    # Option values: true | false
+    auto: false    # Option values: true | false
 
     # Label array item can be fill one or more
-    custom_label_list: ["Trainee", "Engineer", "Architect"]
+    custom_label_list: ["C++菜鸟"]
 
   # Post word count
   # Dependencies: hexo-wordcount (`npm install hexo-wordcount`)
   # See: https://github.com/willin/hexo-wordcount
   word_count:
-    wordcount: false     # Word count, one article. Option values: true | false
-    min2read: false      # Time to read, one article. Option values: true | false
+    wordcount: true     # Word count, one article. Option values: true | false
+    min2read: true      # Time to read, one article. Option values: true | false
 
   # Post datetime
   datetime_format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
@@ -151,7 +151,7 @@ post:
 code_block:
   # Toolbar include: "code copy", "code block collapse" and "code language"
   tools:
-    enable: false            # Option values: true | false
+    enable: true             # Option values: true | false
     style: default           # Option values: default | mac
   highlight_theme: default   # Option values: default | obsidian
 
@@ -160,19 +160,19 @@ code_block:
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/toc.html
 # ---------------------------------------------------------------------------------------
 toc:
-  enable: false      # Option values: true | false
+  enable: true      # Option values: true | false
 
   # Automatically add list number to toc
-  number: false      # Option values: true | false
+  number: true      # Option values: true | false
 
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: false  # Option values: true | false
+  expand_all: true  # Option values: true | false
 
   # If true, auto open TOC every time when you enter the article page
-  init_open: true    # Option values: true | false
+  init_open: false    # Option values: true | false
 
   # TOC layout on article page
-  layout: right      # Option values: left | right
+  layout: right       # Option values: left | right
 
 # ---------------------------------------------------------------------------------------
 # Website count
@@ -183,9 +183,9 @@ website_count:
   # See: http://ibruce.info/2015/04/04/busuanzi/
   busuanzi_count:
     enable: false     # Option values: true | false
-    site_uv: false    # Option values: true | false
-    site_pv: false    # Option values: true | false
-    page_pv: false    # Option values: true | false
+    site_uv: true     # Option values: true | false
+    site_pv: true     # Option values: true | false
+    page_pv: true     # Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Local Search
@@ -194,8 +194,8 @@ website_count:
 # See: https://github.com/theme-next/hexo-generator-searchdb
 # ---------------------------------------------------------------------------------------
 local_search:
-  enable: false   # Option values: true | false
-  preload: false  # Preload the search data when the page loads. Option values: true | false
+  enable: true   # Option values: true | false
+  preload: true  # Preload the search data when the page loads. Option values: true | false
 
 # ---------------------------------------------------------------------------------------
 # Comment plugin
@@ -203,27 +203,19 @@ local_search:
 # ---------------------------------------------------------------------------------------
 comment:
   enable: true   # Option values: true | false
-  use: valine     # Option values: valine | gitalk | twikoo | waline | giscus
+  use: gitalk     # Option values: valine | gitalk | twikoo | waline | giscus
 
-  # Valine
-  # See: https://github.com/xCss/Valine
-  #      https://valine.js.org
-  valine:
-    appid: YYAvpNMHB5QFH91OrnvzdyRF-gzGzoHsz           # Your leancloud application appid
-    appkey: lfLTzSIYUAoqWu4hGjflIcdK          # Your leancloud application appkey
-    server_urls:     # Your Server URL
-    placeholder:     # Input box placeholder
 
   # Gitalk
   # See: https://github.com/gitalk/gitalk
   #      https://gitalk.github.io
   gitalk:
-    github_id:        # GitHub repo owner
+    github_id: LaiXinpeng       # GitHub repo owner
     github_admins:    # GitHub Admins (in Array type), optional
-    repository:       # Repository name to store issues
-    client_id:        # GitHub Application Client ID
-    client_secret:    # GitHub Application Client Secret
-    proxy:            # GitHub oauth request reverse proxy for CORS
+    repository: Comment      # Repository name to store issues
+    client_id: 73ccb16b78669d8725ff       # GitHub Application Client ID
+    client_secret: bd1d205474a55aa5515257879f18931dde6f6abc   # GitHub Application Client Secret
+    proxy: /login/oauth/access_token  # GitHub oauth request reverse proxy for CORS
 
   # Twikoo
   # See: https://github.com/imaegoo/twikoo
