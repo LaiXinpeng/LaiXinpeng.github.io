@@ -36,13 +36,13 @@
 
                     <%- partial('tag-content') %>
 
-                <% } else if (page.title.toLowerCase() === 'category' || page.title.toLowerCase() === 'categories') { %>
+                <% } else if (page.type === 'categories' || page.title === 'categories' || page.title === '分类') { %>
 
                     <%- partial('category-list') %>
 
-                <% } else if (page.title.toLowerCase() === 'tag' || page.title.toLowerCase() === 'tags') { %>
+                <% } else if (page.type === 'tags' || page.title === 'tags' || page.title === '标签') { %>
 
-                    <%- partial('_partial/tagcloud') %>
+                    <%- partial('tag-list') %>
 
                 <% } else { %>
 

@@ -1,15 +1,39 @@
 .tagcloud-container {
+    padding: 1rem;
+    background: var(--background-color);
+    border-radius: 0.5rem;
 
-  keep-container(1, 2rem, 0)
+    .tagcloud-content {
+        text-align: center;
 
-  .tagcloud-content {
+        .site-all-tags {
+            margin: 0;
+            padding: 0;
+            list-style: none;
 
-    text-align justify
+            li {
+                display: inline-block;
+                margin: 0.5rem;
+                padding: 0.5rem 1rem;
+                background: var(--primary-color);
+                border-radius: 0.3rem;
+                transition: all 0.3s ease;
 
-    a {
-      display inline-block
-      box-sizing border-box
-      padding 0.68rem 0.5rem
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                }
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+                .tag-count {
+                    margin-left: 0.5rem;
+                    color: rgba(255, 255, 255, 0.8);
+                }
+            }
+        }
     }
-  }
 }

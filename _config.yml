@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://laixinpeng.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -143,3 +143,15 @@ search:
   field: post
   content: true
   format: striptags
+
+# Tag Generator
+tag_generator:
+  per_page: 10
+  order_by: -date
+  enable_index_page: true
+
+# Category Generator
+category_generator:
+  per_page: 10
+  order_by: -date
+  enable_index_page: true
