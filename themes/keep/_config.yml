@@ -211,11 +211,11 @@ comment:
   #      https://gitalk.github.io
   gitalk:
     github_id: LaiXinpeng       # GitHub repo owner
-    github_admins:    # GitHub Admins (in Array type), optional
+    github_admins: ["LaiXinpeng"]    # GitHub Admins (in Array type), optional
     repository: Comment      # Repository name to store issues
-    client_id: 73ccb16b78669d8725ff       # GitHub Application Client ID
-    client_secret: bd1d205474a55aa5515257879f18931dde6f6abc   # GitHub Application Client Secret
-    proxy: /login/oauth/access_token  # GitHub oauth request reverse proxy for CORS
+    client_id: Ov23liV8V8hEarQS4S5S       # GitHub Application Client ID
+    client_secret: 5b14d0351a5ca221bf60042a1a2f82ddb279ad29  # GitHub Application Client Secret
+    proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token  # GitHub oauth request reverse proxy for CORS
 
   # Twikoo
   # See: https://github.com/imaegoo/twikoo
