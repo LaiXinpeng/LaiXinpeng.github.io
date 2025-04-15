@@ -3,24 +3,12 @@
 # Git 操作
 git pull origin master
 
-# 备份 CNAME 文件（如果存在）
-if [ -f "public/CNAME" ]; then
-    cp public/CNAME CNAME.bak
-fi
-
 git add .
 git commit -m "backup"
 git push origin master
 
 # Hexo 生成和部署
 hexo g
-
-# 恢复 CNAME 文件
-if [ -f "CNAME.bak" ]; then
-    cp CNAME.bak public/CNAME
-    rm CNAME.bak
-fi
-
 hexo d
 
 # 完成提示
