@@ -1,6 +1,7 @@
 @echo off
 
 rem Git 操作
+git pull origin master
 git add .
 git commit -m "backup"
 git push origin master
