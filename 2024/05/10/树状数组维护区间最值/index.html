@@ -333,13 +333,13 @@ mjx-container[display="true"] + br {
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2024-05-10 21:06:46</span>
-                <span class="mobile">2024-05-10 21:06</span>
+                <span class="pc">2024-05-10 01:10:00</span>
+                <span class="mobile">2024-05-10 01:10</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Fri May 10 2024 21:11:58 GMT+0800">2024-05-10 21:11:58</span>
+                <span class="pc" data-updated="Tue Apr 15 2025 22:05:15 GMT+0800">2025-04-15 22:05:15</span>
             </span>
         
 
@@ -347,7 +347,7 @@ mjx-container[display="true"] + br {
             <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
                 <ul class="article-category-ul">
                     
-                            <li class="category-item"><a href="/categories/codeforces/">codeforces</a></li>
+                            <li class="category-item"><a href="/categories/%E7%AE%97%E6%B3%95/">算法</a></li>
                         
                     
                 </ul>
@@ -359,7 +359,10 @@ mjx-container[display="true"] + br {
                 <i class="icon fas fa-tags"></i>&nbsp;
                 <ul class="article-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/codeforces/">codeforces</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/">树状数组</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li>
                         
                     
                 </ul>
@@ -369,7 +372,7 @@ mjx-container[display="true"] + br {
         
         
             <span class="meta-info-item article-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>242 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>244 字</span>
             </span>
         
         
@@ -391,15 +394,28 @@ mjx-container[display="true"] + br {
                 <div class="article-content keep-markdown-body">
                     
 
-                    <h1 id="树状数组维护区间最值"><a href="#树状数组维护区间最值" class="headerlink" title="树状数组维护区间最值"></a>树状数组维护区间最值</h1><h2 id="一-工作原理"><a href="#一-工作原理" class="headerlink" title="一, 工作原理"></a>一, 工作原理</h2><blockquote>
-<p>树状数组是一种支持<strong>单点修改</strong>和<strong>区间查询</strong>的数据结构。普通树状数组维护的信息及运算要满足<strong>结合律</strong>且<strong>可差分</strong>，如加法（和）、乘法（积）、异或等。 ——OI WIKI</p>
+                    <h1 id="树状数组维护区间最值">树状数组维护区间最值</h1>
+<h2 id="一-工作原理">一, 工作原理</h2>
+<blockquote>
+<p>树状数组是一种支持<strong>单点修改</strong>和<strong>区间查询</strong>的数据结构。普通树状数组维护的信息及运算要满足<strong>结合律</strong>且<strong>可差分</strong>，如加法（和）、乘法（积）、异或等。
+——OI WIKI</p>
 </blockquote>
-<p><img src="/2024/05/10/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E7%BB%B4%E6%8A%A4%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC/01.svg" alt="img"></p>
+<figure>
+<img src="/2024/05/10/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E7%BB%B4%E6%8A%A4%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC/01.svg" alt="img">
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>数组中下标为x的元素管辖区间为<code>[x-lowbit(x)+1,x]</code></p>
-<h2 id="二，建树"><a href="#二，建树" class="headerlink" title="二，建树"></a>二，建树</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        tree[i] = <span class="built_in">max</span>(tree[i], a[i]);</span><br><span class="line">        <span class="type">int</span> j = i + <span class="built_in">lowbit</span>(i);</span><br><span class="line">        <span class="keyword">if</span> (j &lt;= n) tree[j] = <span class="built_in">max</span>(tree[j], tree[i]);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<h2 id="三，单点修改"><a href="#三，单点修改" class="headerlink" title="三，单点修改"></a>三，单点修改</h2><p><img src="/2024/05/10/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E7%BB%B4%E6%8A%A4%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC/02.png" alt="img"></p>
+<h2 id="二建树">二，建树</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    {</span><br><span class="line">        tree[i] = <span class="built_in">max</span>(tree[i], a[i]);</span><br><span class="line">        <span class="type">int</span> j = i + <span class="built_in">lowbit</span>(i);</span><br><span class="line">        <span class="keyword">if</span> (j &lt;= n) tree[j] = <span class="built_in">max</span>(tree[j], tree[i]);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="三单点修改">三，单点修改</h2>
+<figure>
+<img src="/2024/05/10/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E7%BB%B4%E6%8A%A4%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC/02.png" alt="img">
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    tree[x] = a[x] = c;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; <span class="built_in">lowbit</span>(x); i &lt;&lt;= <span class="number">1</span>) tree[x] = <span class="built_in">max</span>(tree[x], tree[x - i]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = x; i + <span class="built_in">lowbit</span>(i) &lt;= n; i += <span class="built_in">lowbit</span>(i))</span><br><span class="line">    {</span><br><span class="line">        <span class="type">int</span> j = <span class="built_in">lowbit</span>(i);</span><br><span class="line">        tree[i + j] = <span class="built_in">max</span>(tree[i + j], tree[i]);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-<h2 id="四，区间查询"><a href="#四，区间查询" class="headerlink" title="四，区间查询"></a>四，区间查询</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> res = -INF;</span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span> (; l &lt;= r &amp;&amp; r - <span class="built_in">lowbit</span>(r) + <span class="number">1</span> &gt;= l; r -= <span class="built_in">lowbit</span>(r))</span><br><span class="line">        {</span><br><span class="line">            res = <span class="built_in">max</span>(tree[r], res);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (l &gt; r) <span class="keyword">break</span>;</span><br><span class="line">        res = <span class="built_in">max</span>(a[r], res);</span><br><span class="line">        r--;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="四区间查询">四，区间查询</h2>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> res = -INF;</span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r)</span><br><span class="line">    {</span><br><span class="line">        <span class="keyword">for</span> (; l &lt;= r &amp;&amp; r - <span class="built_in">lowbit</span>(r) + <span class="number">1</span> &gt;= l; r -= <span class="built_in">lowbit</span>(r))</span><br><span class="line">        {</span><br><span class="line">            res = <span class="built_in">max</span>(tree[r], res);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (l &gt; r) <span class="keyword">break</span>;</span><br><span class="line">        res = <span class="built_in">max</span>(a[r], res);</span><br><span class="line">        r--;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+
                 </div>
 
                 
@@ -410,7 +426,11 @@ mjx-container[display="true"] + br {
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/codeforces/">codeforces</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/">树状数组</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
                                     </li>
                                 
                             </ul>
@@ -529,7 +549,7 @@ mjx-container[display="true"] + br {
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E7%BB%B4%E6%8A%A4%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">树状数组维护区间最值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">一, 工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%EF%BC%8C%E5%BB%BA%E6%A0%91"><span class="nav-number">1.2.</span> <span class="nav-text">二，建树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%EF%BC%8C%E5%8D%95%E7%82%B9%E4%BF%AE%E6%94%B9"><span class="nav-number">1.3.</span> <span class="nav-text">三，单点修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%EF%BC%8C%E5%8C%BA%E9%97%B4%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.4.</span> <span class="nav-text">四，区间查询</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E7%BB%B4%E6%8A%A4%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">树状数组维护区间最值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">一, 工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%BB%BA%E6%A0%91"><span class="nav-number">1.2.</span> <span class="nav-text">二，建树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E5%8D%95%E7%82%B9%E4%BF%AE%E6%94%B9"><span class="nav-number">1.3.</span> <span class="nav-text">三，单点修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E5%8C%BA%E9%97%B4%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.4.</span> <span class="nav-text">四，区间查询</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -697,7 +717,7 @@ mjx-container[display="true"] + br {
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E7%BB%B4%E6%8A%A4%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">树状数组维护区间最值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">一, 工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%EF%BC%8C%E5%BB%BA%E6%A0%91"><span class="nav-number">1.2.</span> <span class="nav-text">二，建树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%EF%BC%8C%E5%8D%95%E7%82%B9%E4%BF%AE%E6%94%B9"><span class="nav-number">1.3.</span> <span class="nav-text">三，单点修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%EF%BC%8C%E5%8C%BA%E9%97%B4%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.4.</span> <span class="nav-text">四，区间查询</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E7%BB%B4%E6%8A%A4%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">树状数组维护区间最值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">一, 工作原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%BB%BA%E6%A0%91"><span class="nav-number">1.2.</span> <span class="nav-text">二，建树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E5%8D%95%E7%82%B9%E4%BF%AE%E6%94%B9"><span class="nav-number">1.3.</span> <span class="nav-text">三，单点修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E5%8C%BA%E9%97%B4%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.4.</span> <span class="nav-text">四，区间查询</span></a></li></ol></li></ol>
     </div>
 </div>
 

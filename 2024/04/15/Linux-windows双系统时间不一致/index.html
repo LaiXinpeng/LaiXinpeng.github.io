@@ -221,18 +221,46 @@
         
             <span class="meta-info-item article-create-date">
                 <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
-                <span class="pc">2024-04-15 19:35:40</span>
-                <span class="mobile">2024-04-15 19:35</span>
+                <span class="pc">2024-04-15 11:57:00</span>
+                <span class="mobile">2024-04-15 11:57</span>
             </span>
 
             <span class="meta-info-item article-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="pc" data-updated="Mon Apr 15 2024 19:57:13 GMT+0800">2024-04-15 19:57:13</span>
+                <span class="pc" data-updated="Tue Apr 15 2025 22:05:43 GMT+0800">2025-04-15 22:05:43</span>
             </span>
         
 
         
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/%E7%B3%BB%E7%BB%9F/">系统</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
 
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Linux/">Linux</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Windows/">Windows</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/">双系统</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5/">时间同步</a></li>
+                        
+                    
+                </ul>
+            </span>
         
 
         
@@ -267,8 +295,10 @@
 <ul>
 <li>基础知识：</li>
 </ul>
-<p>UTC（Universal Time Coordinated）即协调世界时，以原子时长为基础，精度好。</p>
-<p>RTC（Real-Time Clock）实时时钟，在计算机领域称为硬件时钟，顾名思义电脑上有个硬件保存了时间信息。让我们下次启动之后，时间还可以正常显示。</p>
+<p>UTC（Universal Time
+Coordinated）即协调世界时，以原子时长为基础，精度好。</p>
+<p>RTC（Real-Time
+Clock）实时时钟，在计算机领域称为硬件时钟，顾名思义电脑上有个硬件保存了时间信息。让我们下次启动之后，时间还可以正常显示。</p>
 <ul>
 <li>原因：</li>
 </ul>
@@ -279,9 +309,12 @@
 <li>解决办法：</li>
 </ul>
 <p>修改windows，让其将RTC硬件时间当作UTC时间。因为Linux使用RTC时间可能会导致一些程序发生错误。</p>
-<p>以管理员身份打开 「PowerShell」，输入以下命令：<br><code>Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /tREG_DWORD /d 1</code></p>
-<p>或者打开<code>注册表编辑器</code>，定位到计算机<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInfor
-mation</code> 目录下，新建一个 <code>DWORD</code> 类型，名称为 <code>RealTimeIsUniversal</code> 的键，并修改键值为 <code>1</code> 即可。</p>
+<p>以管理员身份打开 「PowerShell」，输入以下命令：
+<code>Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /tREG_DWORD /d 1</code></p>
+<p>或者打开<code>注册表编辑器</code>，定位到计算机<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInfor mation</code>
+目录下，新建一个 <code>DWORD</code> 类型，名称为
+<code>RealTimeIsUniversal</code> 的键，并修改键值为 <code>1</code>
+即可。</p>
 
                 </div>
 
@@ -289,6 +322,26 @@ mation</code> 目录下，新建一个 <code>DWORD</code> 类型，名称为 <co
 
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Linux/">Linux</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Windows/">Windows</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/">双系统</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5/">时间同步</a>
+                                    </li>
+                                
+                            </ul>
                         
                     </div>
                     <div>
@@ -304,14 +357,14 @@ mation</code> 目录下，新建一个 <code>DWORD</code> 类型，名称为 <co
                             <div class="article-prev">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2024/04/26/codeforces1954D/"
-                                   title="codeforces1954D"
+                                   href="/2024/04/15/codeforces882D/"
+                                   title="codeforces882D"
                                 >
                                     <span class="left arrow-icon flex-center">
                                       <i class="fas fa-chevron-left"></i>
                                     </span>
                                             <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">codeforces1954D</span>
+                                        <span class="post-nav-title-item text-ellipsis">codeforces882D</span>
                                         <span class="post-nav-item">上一篇</span>
                                     </span>
                                 </a>
@@ -321,11 +374,11 @@ mation</code> 目录下，新建一个 <code>DWORD</code> 类型，名称为 <co
                             <div class="article-next">
                                 <a class="next"
                                    rel="next"
-                                   href="/2024/04/15/Windows%E4%B8%8EUbuntu22-04-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"
-                                   title="Windows与Ubuntu22.04 双系统安装"
+                                   href="/2024/02/16/Proxifier-2023%E5%B9%B411%E6%9C%88%E6%97%B6%E6%9C%80%E6%96%B0%E7%89%88-%E6%BF%80%E6%B4%BB%E6%95%99%E7%A8%8B/"
+                                   title="Proxifier-2023年11月时最新版-激活教程"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Windows与Ubuntu22.04 双系统安装</span>
+                                        <span class="post-nav-title-item text-ellipsis">Proxifier-2023年11月时最新版-激活教程</span>
                                         <span class="post-nav-item">下一篇</span>
                                     </span>
                                             <span class="right arrow-icon flex-center">
