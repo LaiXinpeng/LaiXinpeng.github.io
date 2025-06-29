@@ -210,11 +210,11 @@ comment:
   # See: https://github.com/gitalk/gitalk
   #      https://gitalk.github.io
   gitalk:
-    github_id: LaiXinpeng       # GitHub repo owner
-    github_admins: ["LaiXinpeng"]    # GitHub Admins (in Array type), optional
-    repository: Comment      # Repository name to store issues
-    client_id: Ov23liV8V8hEarQS4S5S       # GitHub Application Client ID
-    client_secret: 5b14d0351a5ca221bf60042a1a2f82ddb279ad29  # GitHub Application Client Secret
+    github_id: jacl-coder       # GitHub repo owner
+    github_admins: ["jacl-coder"]    # GitHub Admins (in Array type), optional
+    repository: lxp-blog-comments      # Repository name to store issues
+    client_id: Ov23lifzzcTc4dvqtpQL      # GitHub Application Client ID
+    client_secret: 85e699204f3bada6a924e2a041426d470ae80e8f  # GitHub Application Client Secret
     proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token  # GitHub oauth request reverse proxy for CORS
 
   # Twikoo

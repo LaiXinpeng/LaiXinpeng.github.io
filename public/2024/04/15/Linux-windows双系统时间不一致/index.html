@@ -35,7 +35,7 @@
     <script class="keep-theme-configurations">
     const KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"laixinpeng.github.io","root":"/","language":"zh-CN","path":"search.json"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false,"layout":"right"},"style":{"primary_color":"#0066cc","logo":"/images/lxp.png","favicon":"/images/lxp.png","avatar":"/images/lxp.png","first_screen":{"enable":true,"background_img":"/images/preview.png","description":"You Can Make It.","hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":true,"use":"gitalk","gitalk":{"github_id":"LaiXinpeng","github_admins":["LaiXinpeng"],"repository":"Comment","client_id":"Ov23liV8V8hEarQS4S5S","client_secret":"5b14d0351a5ca221bf60042a1a2f82ddb279ad29","proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["C++菜鸟"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":false,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":false,"layout":"right"},"style":{"primary_color":"#0066cc","logo":"/images/lxp.png","favicon":"/images/lxp.png","avatar":"/images/lxp.png","first_screen":{"enable":true,"background_img":"/images/preview.png","description":"You Can Make It.","hitokoto":false},"scroll":{"progress_bar":true,"percent":true}},"local_search":{"enable":true,"preload":true},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":true,"use":"gitalk","gitalk":{"github_id":"jacl-coder","github_admins":["jacl-coder"],"repository":"lxp-blog-comments","client_id":"Ov23lifzzcTc4dvqtpQL","client_secret":"85e699204f3bada6a924e2a041426d470ae80e8f","proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":false,"custom_label_list":["C++菜鸟"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":false,"site_uv":true,"site_pv":true,"page_pv":true}},"version":"3.8.6"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -267,8 +267,10 @@
 <ul>
 <li>基础知识：</li>
 </ul>
-<p>UTC（Universal Time Coordinated）即协调世界时，以原子时长为基础，精度好。</p>
-<p>RTC（Real-Time Clock）实时时钟，在计算机领域称为硬件时钟，顾名思义电脑上有个硬件保存了时间信息。让我们下次启动之后，时间还可以正常显示。</p>
+<p>UTC（Universal Time
+Coordinated）即协调世界时，以原子时长为基础，精度好。</p>
+<p>RTC（Real-Time
+Clock）实时时钟，在计算机领域称为硬件时钟，顾名思义电脑上有个硬件保存了时间信息。让我们下次启动之后，时间还可以正常显示。</p>
 <ul>
 <li>原因：</li>
 </ul>
@@ -279,9 +281,12 @@
 <li>解决办法：</li>
 </ul>
 <p>修改windows，让其将RTC硬件时间当作UTC时间。因为Linux使用RTC时间可能会导致一些程序发生错误。</p>
-<p>以管理员身份打开 「PowerShell」，输入以下命令：<br><code>Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /tREG_DWORD /d 1</code></p>
-<p>或者打开<code>注册表编辑器</code>，定位到计算机<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInfor
-mation</code> 目录下，新建一个 <code>DWORD</code> 类型，名称为 <code>RealTimeIsUniversal</code> 的键，并修改键值为 <code>1</code> 即可。</p>
+<p>以管理员身份打开 「PowerShell」，输入以下命令：
+<code>Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /tREG_DWORD /d 1</code></p>
+<p>或者打开<code>注册表编辑器</code>，定位到计算机<code>\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInfor mation</code>
+目录下，新建一个 <code>DWORD</code> 类型，名称为
+<code>RealTimeIsUniversal</code> 的键，并修改键值为 <code>1</code>
+即可。</p>
 
                 </div>
 
@@ -304,14 +309,14 @@ mation</code> 目录下，新建一个 <code>DWORD</code> 类型，名称为 <co
                             <div class="article-prev">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2024/04/15/%E5%AE%9E%E4%B9%A0/"
-                                   title="实习"
+                                   href="/2024/04/26/codeforces1954D/"
+                                   title="codeforces1954D"
                                 >
                                     <span class="left arrow-icon flex-center">
                                       <i class="fas fa-chevron-left"></i>
                                     </span>
                                             <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">实习</span>
+                                        <span class="post-nav-title-item text-ellipsis">codeforces1954D</span>
                                         <span class="post-nav-item">上一篇</span>
                                     </span>
                                 </a>
@@ -363,11 +368,11 @@ mation</code> 目录下，新建一个 <code>DWORD</code> 类型，名称为 <co
 
             try {
               Gitalk && new Gitalk({
-                clientID: 'Ov23liV8V8hEarQS4S5S',
-                clientSecret: '5b14d0351a5ca221bf60042a1a2f82ddb279ad29',
-                repo: 'Comment',
-                owner: 'LaiXinpeng',
-                admin: 'LaiXinpeng',
+                clientID: 'Ov23lifzzcTc4dvqtpQL',
+                clientSecret: '85e699204f3bada6a924e2a041426d470ae80e8f',
+                repo: 'lxp-blog-comments',
+                owner: 'jacl-coder',
+                admin: 'jacl-coder',
                 id: __gitalk__pathname,
                 proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token',
                 language: 'zh-CN'
