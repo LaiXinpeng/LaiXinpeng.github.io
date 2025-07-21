@@ -1,7 +1,9 @@
 ---
 title: hexo的常用命令
 date: 2023-10-28 02:42:33
-tags:
+tags: [hexo]
+mathjax: true
+categories: hexo
 ---
 ## 安装、升级
 ```

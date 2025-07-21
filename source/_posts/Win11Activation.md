@@ -1,7 +1,10 @@
 ---
 title: Win11 Activation
 date: 2023-09-07 18:34:45
+tags: [杂项]
+mathjax: true
 categories: 杂项
+
 ---
 ## win11专业版激活
 

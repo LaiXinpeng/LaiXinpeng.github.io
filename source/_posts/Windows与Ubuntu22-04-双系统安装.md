@@ -1,7 +1,9 @@
 ---
 title: Windows与Ubuntu22.04 双系统安装
 date: 2024-04-15 17:41:43
-tags:
+tags: [杂项]
+mathjax: true
+categories: 杂项
 ---
 
 ### 一、查看基础环境

@@ -1,7 +1,9 @@
 ---
 title: Linux-windows双系统时间不一致
 date: 2024-04-15 19:35:40
-tags:
+tags: [杂项]
+mathjax: true
+categories: Linux
 ---
 * 问题：
 

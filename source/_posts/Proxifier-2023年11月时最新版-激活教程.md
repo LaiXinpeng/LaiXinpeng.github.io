@@ -1,7 +1,9 @@
 ---
 title: Proxifier 2023年11月时最新版 激活教程
 date: 2024-02-16 23:27:14
-tags:
+tags: [工具]
+mathjax: true
+categories: 工具
 ---
 ## 前言
 Proxifier 是一款功能非常强大的socks5客户端，可以让不支持通过代理服务器工作的网络程序能通过HTTPS或SOCKS代理或代理链。支持64位系统支持Xp，Vista，Win7，支持socks4，socks5，http 代理协议，支持TCPUDP协议，可以指定端口，IP，指定程序等运行模式，兼容性非常好。有许多网络应用程序不支持通过代理服务器工作，因此不能用于局域网或防火墙后面。这些会损害公司的隐私和导致很多限制。Proxifier 解决了这些问题和所有限制，让您有机会不受任何限制使用你喜爱的软件。此外它让你获得了额外的网络安全控制，创建代理隧道，并添加使用更多网络功能的权力。
@@ -36,7 +38,7 @@ Proxifier 是一款功能非常强大的socks5客户端，可以让不支持通�
 **抓包比较好用**
 
 软件官方网站地址  
-https://www.proxifier.com/
+[https://www.proxifier.com/](https://www.proxifier.com/)
 
 ![图片](./Proxifier-2023年11月时最新版-激活教程/01.png)
 
@@ -148,4 +150,4 @@ P427L-9Y552-5433E-8DSR3-58Z68
 
 上面的图就是成功了的界面，点击确定后就可以快乐的使用Proxifier了
 
-原文链接：https://www.cnblogs.com/wushiyiwuzhong/p/17809020.html
+原文链接：[https://www.cnblogs.com/wushiyiwuzhong/p/17809020.html](https://www.cnblogs.com/wushiyiwuzhong/p/17809020.html)
